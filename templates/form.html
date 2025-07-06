@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Influencer Metrics Input</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Influencer Popularity Predictor</h1>
+        <form method="POST">
+            <label for="video_views">Video Views:</label>
+            <input type="number" name="video_views" required>
+
+            <label for="total_channel_subscribers">Total Channel Subscribers:</label>
+            <input type="number" name="total_channel_subscribers" required>
+
+            <label for="total_channel_views">Total Channel Views:</label>
+            <input type="number" name="total_channel_views" required>
+
+            <label for="duration_in_seconds">Duration (in seconds):</label>
+            <input type="number" name="duration_in_seconds" required>
+
+            <label for="no_of_likes">Number of Likes:</label>
+            <input type="number" name="no_of_likes" required>
+
+            <label for="hashtags">Number of Hashtags:</label>
+            <input type="number" name="hashtags" required>
+
+            <label for="no_of_comments">Number of Comments:</label>
+            <input type="number" name="no_of_comments" required>
+
+            <label for="no_of_videos_the_channel">Total Number of Videos:</label>
+            <input type="number" name="no_of_videos_the_channel" required>
+
+            <label for="no_of_playlist">Number of Playlists:</label>
+            <input type="number" name="no_of_playlist" required>
+
+            <label for="community_engagement">Community Engagement (posts per week):</label>
+            <input type="number" name="community_engagement" required>
+
+            <label for="creator_gender">Creator Gender:</label>
+            <select name="creator_gender" required>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="subtitle">Subtitle:</label>
+            <select name="subtitle" required>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+
+            <label for="max_quality">Maximum Quality of the Video:</label>
+            <select name="max_quality" required>
+                <option value="240">240p</option>
+                <option value="360">360p</option>
+                <option value="480">480p</option>
+                <option value="720">720p</option>
+                <option value="1080">1080p</option>
+                <option value="1440">1440p</option>
+                <option value="2160">2160p</option>
+            </select>
+
+            <label for="premiered">Premiered or Not:</label>
+            <select name="premiered" required>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+
+        {% if popularity_score is not none %}
+            <h2>Predicted Popularity : {{ popularity_category }}</h2>
+        {% endif %}
+
+
+    </div>
+</body>
+</html>
